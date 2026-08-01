@@ -1,0 +1,55 @@
+:root {
+  /* Color tokens — acoustic forensics / instrumentation palette */
+  --color-bg: #0b0e13;
+  --color-panel: #141920;
+  --color-panel-raised: #1a212a;
+  --color-border: #262f3a;
+  --color-text: #e8ecf1;
+  --color-text-muted: #8b96a5;
+  --color-accent: #f2a94e; /* signal amber — active / in-progress */
+  --color-verified: #4fd1c5; /* teal — acoustic match */
+  --color-flagged: #e5697b; /* rose — acoustic mismatch */
+
+  /* Type tokens */
+  --font-display: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
